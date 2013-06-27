@@ -2,7 +2,7 @@ require 'capistrano'
 require 'rubygems'
 require 'json'
 require 'capistrano/version'
-require 'debugger'
+
 module CapistranoDeployInfo
   class CapistranoIntegration
     def self.load_into(capistrano_config)
