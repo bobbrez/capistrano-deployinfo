@@ -22,7 +22,7 @@ module CapistranoDeployInfo
 
             cache_path = "#{shared_path}/cached-copy"
 
-            tag = { :app => application, 
+            tag = { :app => application,
                     :user =>  ENV['USER'],
                     :deployed_at => Time.now,
                     :branch => branch,
@@ -33,6 +33,19 @@ module CapistranoDeployInfo
             log = '<< NO RELEASE NOTES AVAILABLE >>' if log.empty?
             run "echo '#{log}' > #{release_path}/public/release_notes.txt"
             run "echo '#{tag.to_json}' > #{latest_release}/public/deploy.json"
+          end
+
+          task :checkinfo do
+            setup_current_ref
+            puts "performing checkinfo..."
+            checks = 0
+            while !FileUtils.compare_file("#{latest_release}/public/deploy.json", "#{current_release}/public/deploy.json")
+              checks+=1
+              fail! if checks > 5
+              puts "."
+              sleep 2
+            end
+            puts "checkinfo succeeded."
           end
         end
       end

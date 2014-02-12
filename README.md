@@ -1,6 +1,7 @@
 # Capistrano::Deployinfo
 
-TODO: Write a gem description
+Writes a `deploy.json` file containing information about the latest
+deployment to your `#{latest_release}/public` directory.
 
 ## Installation
 
@@ -18,7 +19,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Add the hook to your Capistrano `deploy.rb` file
+
+    after 'deploy:update_code', 'deploy:writeinfo'
 
 ## Contributing
 
