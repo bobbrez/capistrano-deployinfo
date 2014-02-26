@@ -1,11 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'capistrano-deployinfo/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "capistrano-deployinfo"
-  spec.version       = CapistranoDeployInfo::VERSION
+  spec.version       = '1.0.0'
   spec.authors       = ["Bob Breznak"]
   spec.email         = ["bob.breznak@gmail.com"]
   spec.description   = %q{Capistrano tasks that write information about deploy into a project for quick referenceCapistrano tasks that write information about deploy into a project for quick reference.}
