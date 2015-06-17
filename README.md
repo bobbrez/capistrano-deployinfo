@@ -35,12 +35,12 @@ And then execute:
 
 ```json
 {
-app: "my-app",
-deployed_at: "2014-02-26 00:25:33 -0500",
-branch: "master",
-user: "bob",
-sha: "7cf044f",
-release: "20140226052444"
+"app": "my-app",
+"deployed_at": "2014-02-26 00:25:33 -0500",
+"branch": "master",
+"user": "bob",
+"sha": "7cf044f",
+"release": "20140226052444"
 }
 ```
 
