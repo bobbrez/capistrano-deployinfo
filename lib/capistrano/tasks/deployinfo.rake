@@ -1,3 +1,5 @@
+require 'json'
+
 namespace :deploy do
   task :write_info do
     on roles(fetch(:deployinfo_roles)) do
