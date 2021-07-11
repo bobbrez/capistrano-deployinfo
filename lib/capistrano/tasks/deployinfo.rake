@@ -1,3 +1,5 @@
+require 'json'
+
 namespace :deploy do
   task :write_info do
     on roles(fetch(:deployinfo_roles)) do
@@ -22,6 +24,7 @@ end
 
 namespace :load do
   task :defaults do
+    set :deployinfo_path, -> { release_path }
     set :deployinfo_roles, :all
     set :deployinfo_dir, 'public'
     set :deployinfo_filename, 'deploy.json'
